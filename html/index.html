@@ -20,12 +20,42 @@
             align-items: center;
         }
         #frameOfList{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
             border: 1px solid black;
             max-width: 35em;
             margin: 0 auto;
+            padding-top: 2em;
+        }
+        #add{
+            display: flex;
+            justify-content: center;
+        }
+        #add :focus{
+            outline-width: 0;
+        }
+        #addNew{
+            border: none;
+            border-radius: 0.5em;
+            height: 1.5em;
+            width: 25em;
+            size: 30;
+            box-shadow: 0 0 0.2em 0.1em #c9c7c7 inset;
+            padding: 0.5em;
+        }
+        .list{
+            border: 1px solid black;
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+        }
+        .list h2{
+            margin: 0;
+            font-size: 2em;
         }
     </style>
-    <scripts src="/scripts/index.js"></scripts>
+    <scripts typr="text/javascript" src="/scripts/index.js"></scripts>
 </head>
 <body>
     <header>
@@ -34,9 +64,22 @@
         </p>
     </header>
     <div id="frameOfList">
-        <form>
-            <input type="text"/>
-        </form>
+        <div id="add">
+            <form id="list-form" onsubmit="return AddTodoList()">
+                <label for="addNew">Start New</label>
+                 <input type="text" id="addNew" name="addText"
+                  required/>
+                 <input type="submit" value="Add"/>
+            </form>
+        </div>
+        <div>
+            <ul class="list">
+                <h2>Todo</h2>
+            </ul>
+            <ul class="list">
+                <h2>Finished</h2>
+            </ul>
+        </div>
     </div>
 </body>
 </html>
