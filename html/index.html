@@ -45,7 +45,7 @@
             padding: 0.5em;
         }
         .list{
-            border: 1px solid black;
+            /* border: 1px solid black; */
             display: flex;
             flex-direction: column;
             padding: 0;
@@ -54,8 +54,79 @@
             margin: 0;
             font-size: 2em;
         }
+        .todo{
+            margin-top:0.5em;
+            padding: 0.5em;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            list-style: none;
+            /* border: 1px solid black; */
+            border-radius: 0.5em;
+            background-color: rgba(29, 219, 29, 0.712);
+        }
+        .box{
+            width: 2em;
+            height: 2em;
+        }
+        .todo p{
+            font-size:1.2em;
+            font-weight: bold;
+            color: white;
+            /* border: 1px solid black; */
+            width: 25em;
+            margin:0 0.5em;
+        }
+        .todo a{
+            margin: 0;
+            padding: 0;
+            border: 0.2em solid white;
+            outline: none;
+            width: 1.5em;
+            height: 1.5em;
+            border-radius: 50%;
+            background: url(/img/delete.jpg) no-repeat center center;
+            background-size: cover;
+            box-shadow: 0.1em 0.1em 0.1em #888888;
+        }
+        .todo a:active{
+            box-shadow: none;
+        }
+        .done{
+            margin-top:0.5em;
+            padding: 0.5em;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            list-style: none;
+            /* border: 1px solid black; */
+            border-radius: 0.5em;
+            background-color: rgba(182, 176, 176, 0.712);
+        }
+        .done p{
+            font-size:1.2em;
+            font-weight: bold;
+            color: white;
+            /* border: 1px solid black; */
+            width: 25em;
+            margin:0 0.5em;
+        }
+        .done a{
+            margin: 0;
+            padding: 0;
+            border: 0.2em solid white;
+            outline: none;
+            width: 1.5em;
+            height: 1.5em;
+            border-radius: 50%;
+            background: url(/img/delete.jpg) no-repeat center center;
+            background-size: cover;
+            box-shadow: 0.1em 0.1em 0.1em #888888;
+        }
+        .done a:active{
+            box-shadow: none;
+        }
     </style>
-    <scripts typr="text/javascript" src="/scripts/index.js"></scripts>
 </head>
 <body>
     <header>
@@ -65,21 +136,32 @@
     </header>
     <div id="frameOfList">
         <div id="add">
-            <form id="list-form" onsubmit="return AddTodoList()">
+            <form id="list-form" action="javascript:submitTodo()">
                 <label for="addNew">Start New</label>
-                 <input type="text" id="addNew" name="addText"
+                 <input type="text" id="addNew" name="addNew"
                   required/>
                  <input type="submit" value="Add"/>
             </form>
         </div>
         <div>
-            <ul class="list">
+            <ul class="list" id="ListTodo">
                 <h2>Todo</h2>
+                <li class="todo">
+                    <input type='checkbox' class='box' onchange="addToAnotherList(this)"/>
+                    <p>hello</p>
+                    <a onclick="deleteMission(this.parentElement)"></a>
+                </li>
             </ul>
-            <ul class="list">
+            <ul class="list" id="ListDone">
                 <h2>Finished</h2>
+                <li class="done">
+                    <input type='checkbox' class='box' onchange="addToAnotherList(this)"/>
+                    <p>hello</p>
+                    <a onclick="deleteMission(this.parentElement)"></a>
+                </li>
             </ul>
         </div>
     </div>
 </body>
+<script type="text/javascript" src="/scripts/index.js"></script>
 </html>
