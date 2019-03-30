@@ -23,7 +23,7 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            border: 1px solid black;
+            /* border: 1px solid black; */
             max-width: 35em;
             margin: 0 auto;
             padding-top: 2em;
@@ -45,10 +45,11 @@
             padding: 0.5em;
         }
         .list{
-            /* border: 1px solid black; */
+            border: 1px solid black;
             display: flex;
+            border-radius: 0.5em;
             flex-direction: column;
-            padding: 0;
+            padding: 0.5em;
         }
         .list h2{
             margin: 0;
@@ -77,19 +78,19 @@
             width: 25em;
             margin:0 0.5em;
         }
-        .todo a{
+        a{
             margin: 0;
             padding: 0;
-            border: 0.2em solid white;
+            border: 0.15em solid white;
             outline: none;
-            width: 1.5em;
-            height: 1.5em;
+            width: 1em;
+            height: 1em;
             border-radius: 50%;
             background: url(/img/delete.jpg) no-repeat center center;
             background-size: cover;
             box-shadow: 0.1em 0.1em 0.1em #888888;
         }
-        .todo a:active{
+        a:active{
             box-shadow: none;
         }
         .done{
@@ -110,21 +111,6 @@
             /* border: 1px solid black; */
             width: 25em;
             margin:0 0.5em;
-        }
-        .done a{
-            margin: 0;
-            padding: 0;
-            border: 0.2em solid white;
-            outline: none;
-            width: 1.5em;
-            height: 1.5em;
-            border-radius: 50%;
-            background: url(/img/delete.jpg) no-repeat center center;
-            background-size: cover;
-            box-shadow: 0.1em 0.1em 0.1em #888888;
-        }
-        .done a:active{
-            box-shadow: none;
         }
     </style>
 </head>
