@@ -63,23 +63,3 @@ function load(){
         }
     }
 }
-
-// var p1=new Promise(function(resolve, reject){
-//     var xhr = new XMLHttpRequest();
-//     xhr.open();
-//     xhr.send('POST','https://szuwechat.cn/tech', true);
-//     xhr.onreadystatechange=function(){
-//         if(xhr.readyState==4){
-//             resolve(xhr.responseText);
-//         }
-//         else{
-//             reject('loading');
-//         }
-//     }();
-// });
-
-// p1.then(function(result){
-//     console.log(result);
-// }).catch(function(result1){
-//     console.log(result1);
-// });
