@@ -56,7 +56,12 @@ function load(){
     xhr.send('username=szu&password=666');
     xhr.onreadystatechange = function(){
         if(xhr.readyState==4){
-            console.log(xhr.responseText);
+            if(xhr.status==200){
+                console.log(xhr.responseText);
+            }
+            else{
+                console.log(xhr.status);
+            }
         }
         else{
             console.log('loading');
