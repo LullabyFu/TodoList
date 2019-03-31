@@ -28,24 +28,29 @@
             margin: 0 auto;
             padding-top: 2em;
         }
-        #add{
+        #list-form{
+            /* border: 1px solid black; */
             display: flex;
             justify-content: center;
+            align-items: center;
         }
-        #add :focus{
+        #list-form :focus{
             outline-width: 0;
         }
         #addNew{
             border: none;
             border-radius: 0.5em;
             height: 1.5em;
-            width: 25em;
-            size: 30;
+            width: 65%;
             box-shadow: 0 0 0.2em 0.1em #c9c7c7 inset;
             padding: 0.5em;
+            margin: 0.5em;
+        }
+        #addNew :focus{
+            outline-width: 0;
         }
         .list{
-            border: 1px solid black;
+            /* border: 1px solid black; */
             display: flex;
             border-radius: 0.5em;
             flex-direction: column;
@@ -54,6 +59,14 @@
         .list h2{
             margin: 0;
             font-size: 2em;
+        }
+        .list p{
+            font-size:1.2em;
+            font-weight: bold;
+            color: white;
+            /* border: 1px solid black; */
+            width: 85%;
+            margin:0 0.5em;
         }
         .todo{
             margin-top:0.5em;
@@ -69,14 +82,7 @@
         .box{
             width: 2em;
             height: 2em;
-        }
-        .todo p{
-            font-size:1.2em;
-            font-weight: bold;
-            color: white;
-            /* border: 1px solid black; */
-            width: 25em;
-            margin:0 0.5em;
+            cursor: pointer;
         }
         a{
             margin: 0;
@@ -89,6 +95,7 @@
             background: url(/img/delete.jpg) no-repeat center center;
             background-size: cover;
             box-shadow: 0.1em 0.1em 0.1em #888888;
+            cursor: pointer;
         }
         a:active{
             box-shadow: none;
@@ -105,12 +112,7 @@
             background-color: rgba(182, 176, 176, 0.712);
         }
         .done p{
-            font-size:1.2em;
-            font-weight: bold;
-            color: white;
-            /* border: 1px solid black; */
-            width: 25em;
-            margin:0 0.5em;
+            color:black;
         }
     </style>
 </head>
@@ -121,14 +123,14 @@
         </p>
     </header>
     <div id="frameOfList">
-        <div id="add">
+        <!-- <div id="add"> -->
             <form id="list-form" action="javascript:submitTodo()">
                 <label for="addNew">Start New</label>
                  <input type="text" id="addNew" name="addNew"
                   required/>
-                 <input type="submit" value="Add"/>
+                 <input type="submit" id="addButton" value="Add"/>
             </form>
-        </div>
+        <!-- </div> -->
         <div>
             <ul class="list" id="ListTodo">
                 <h2>Todo</h2>
@@ -140,11 +142,11 @@
             </ul>
             <ul class="list" id="ListDone">
                 <h2>Finished</h2>
-                <li class="done">
+                <!-- <li class="done">
                     <input type='checkbox' class='box' onchange="addToAnotherList(this)"/>
                     <p>hello</p>
                     <a onclick="deleteMission(this.parentElement)"></a>
-                </li>
+                </li> -->
             </ul>
         </div>
     </div>
